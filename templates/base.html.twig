@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Abolsute Cleaning{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('build/images/favicon.ico') }}" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+            <!-- Google fonts-->
+            <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+            <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+
+        
+    </head>
+    <body>
+    
+        {% block body %}
+
+                <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="#page-top">
+                        <img src="{{ asset('images/logo_AC.jpeg') }}" alt="logo" style="width: 180px;"> </a>
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                        aria-label="Toggle navigation"> Menu
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#">Accueil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">Nos services</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#projects">Nos réalisations</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/admin">Back-Office</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Masthead-->
+            <header class="masthead" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 75%, #000 100%), url('{{ asset('images/' ~ photo[0].picture) }}');"> 
+                <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="text-center">
+                            <h1 class="mx-auto my-0 text-uppercase">Absolute Cleaning</h1>
+                            <h2 class="text-white-50 mx-auto mt-5 mb-5">
+                                Nous sommes une entreprise de nettoyage haute pression basée sur la Côte d'Azur, spécialisée
+                                dans les services de rénovation. Notre expertise réside dans la restauration de diverses
+                                surfaces, et nous sommes fiers de proposer des services de nettoyage de qualité supérieure pour
+                                répondre aux besoins spécifiques de nos clients.</h2>
+                            <a class="btn btn-light" href="#signup">DEVIS GRATUIT</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- About-->
+            <section class="about-section text-center" id="about">
+                <div class="container px-4">
+                    <div class="row gx-4 gx-lg-5 justify-content-center">
+                        <div class="col-lg-10">
+                            <h2 class="text-white mb-4">NOS SERVICES</h2>
+                            <p class="text-white">
+                                Que vous soyez un professionnel ou un particulier à la recherche de solutions de nettoyage pour
+                                différentes surfaces, nous sommes là pour vous aider. Notre équipe mettra en œuvre tous les
+                                moyens nécessaires afin de répondre de manière optimale à vos besoins spécifiques.
+                            </p>
+                            <table class="text-white">
+
+                                <tr>
+                                    <th> TRAITEMENT HYDROFUGE</th>
+                                </tr>
+                                <td>
+                                    <ul>
+                                        Le traitement hydrofuge offre une protection et une imperméabilisation efficaces de la
+                                        surface traitée. Il prévient la croissance de micro-végétaux et confère une durabilité
+                                        accrue à vos surfaces après leur nettoyage. Il est recommandé de faire appliquer ce
+                                        traitement par un professionnel afin d'éviter tout risque de détérioration ultérieure de
+                                        la surface. En outre, en fonction du type d'hydrofuge que vous choisissez, il peut
+                                        donner un aspect satiné ou mat à la surface, tout en procurant un effet déperlant à la
+                                        pluie, empêchant ainsi toute absorption par la surface traitée.
+                                    </ul>
+                                </td>
+                            </table>
+                            <table class="d-flex justify-content-center text-white text-center mt-5">
+                                <tr>
+                                    <th>POUR LES PARTICULIERS :</th>
+                                    <th>POUR LES PROFESSIONNELS :</th>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <ul>
+                                            <li>Nettoyage de façades résidentielles</li>
+                                            <li> Entretien et nettoyage de terrasses privées</li>
+                                            <li> Traitement et rénovation de toitures</li>
+                                            <li>Services de nettoyage pour domaines privés</li>
+                                        </ul>
+                                    </td>
+                                    <td class="p-4">
+                                        <ul>
+                                            <li>Nettoyage de façades de commerces</li>
+                                            <li>Entretien et nettoyage de terrasses commerciales</li>
+                                            <li>Traitement et rénovation de toitures commerciales</li>
+                                            <li>Services de nettoyage pour copropriétés</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <img class="img-fluid" src="assets/img/" alt="..." /> -->
+                </div>
+            </section>
+
+            <!-- Projects-->
+
+            <section class="projects-section bg-light" id="projects">
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                        {% for photo in photo %}
+                            {% if photo.id >= 2 %}
+                            <div class="col-xl-8 col-lg-7 mb-3"><img class="img-fluid mb-3 mb-lg-0" src="{{ asset('images/' ~ photo.picture) }}" alt="{{ photo.title }}"/></div>
+                                <div class="col-xl-4 col-lg-5">
+                                    <div class="featured-text text-center text-lg-left">
+                                        <div class="d-flex h-100">
+                                            <div class="project-text w-100 my-auto text-center text-lg-left">
+                                                <h4 class="text-dark">{{ photo.title }}</h4>
+                                                <p class="mb-0" style="color:darkgray">{{ photo.description | raw }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Signup-->
+        {% form_theme contact_form 'bootstrap_5_layout.html.twig' %}
+                <section class="signup-section" id="signup" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 10%, rgba(0, 0, 0, 0.1) 80%, #000 100%), url('{{ asset('images/' ~ photo[1].picture) }}');"> >
+                <div class="container px-4 px-lg-5">
+                    <div class="row gx-4 gx-lg-5">
+                        <div class="col-md-10 col-lg-8 mx-auto text-center">
+                            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                            <h2 class="text-white mb-5" id="h2-contact"> Contactez nous pour votre devis gratuit !</h2>
+                            <div class="row justify-content-center mb-5">
+                                <div class="col-lg-8">
+
+                                {# Afficher les msg flash#}
+                                {% for msg in app.flashes('confirmation') %}
+                                    <div id="flash-message" class="alert alert-success">
+                                        {{ msg }}
+                                    </div>
+                                {% endfor %}
+
+                                    <div class="container mt-2">
+                                       {{ form(contact_form) }}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contact-->
+                            <div class="d-flex justify-content-around">
+                                <div class="col-md-5 mb-3 mb-md-0 p-4">
+                                    <div class="card py-4 h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-map-marked-alt text-muted mb-2"></i>
+                                            <h4 class="text-uppercase m-0">Adresse</h4>
+                                            <hr class="my-4 mx-auto" />
+                                            <div class="small text-black-50">5 Rue Jean Jaures, 06400 Cannes</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 mb-3 mb-md-0 p-4">
+                                    <div class="card py-4 h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-envelope text-muted mb-2"></i>
+                                            <h4 class="text-uppercase m-0">Email</h4>
+                                            <hr class="my-4 mx-auto" />
+                                            <div class="small text-black-50"><a href="#!">absolutecleaning06@gmail.com</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 mb-3 mb-md-0 p-4">
+                                    <div class="card py-4 h-100">
+                                        <div class="card-body text-center">
+                                            <i class="fas fa-mobile-alt text-muted mb-2"></i>
+                                            <h4 class="text-uppercase m-0">Téléphone</h4>
+                                            <hr class="my-4 mx-auto" />
+                                            <div class="small text-black-50">+33 6 25 43 31 86</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+           {# RESEAUX SOCIAUX #}
+                            {# <div class="social d-flex justify-content-center">
+                                <a class="mx-2" href="#!"><i class="bi bi-twitter"></i></a>
+                                <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                                <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                            </div> #}
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Footer-->
+            <footer class="footer bg-black small text-center text-white-50">
+                <div class="container px-4 px-lg-5">Copyright &copy; Absolute Cleaning</div>
+            </footer>
+       
+        {% endblock %}
+    </body>
+</html>
