@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Abolsute Cleaning</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-</head>
+    require_once("header.php");
+
+    $pdo = new PDO('mysql:host=localhost;dbname=absolute_cleaning', 'root', 'root');
+
+    // Récupérer les informations du traitement hydrofuge
+    $stmt1 = $pdo->query("SELECT titre, description, photo FROM photos WHERE id = 1");
+    $traitementHydrofuge = $stmt1->fetch(PDO::FETCH_ASSOC);
+    
+    // Récupérer les informations du projet avant
+    $stmt2 = $pdo->query("SELECT titre, description FROM photos WHERE id = 2");
+    $projetAvant = $stmt2->fetch(PDO::FETCH_ASSOC);
+    
+    // Récupérer les informations du projet après
+    $stmt3 = $pdo->query("SELECT titre, description FROM photos WHERE id = 3");
+    $projetApres = $stmt3->fetch(PDO::FETCH_ASSOC);
+    
+
+?>
 
 <body id="page-top">
     <!-- Navigation-->
@@ -36,6 +36,7 @@
                     <li class="nav-item"><a class="nav-link" href="#about">Nos services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Nos réalisations</a></li>
                     <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./admin/">Back-Office</a></li>
                 </ul>
             </div>
         </div>
@@ -68,8 +69,9 @@
                         moyens nécessaires afin de répondre de manière optimale à vos besoins spécifiques.
                     </p>
                     <table class="text-white">
+
                         <tr>
-                            <th>TRAITEMENT HYDROFUGE</th>
+                            <th> TRAITEMENT HYDROFUGE</th>
                         </tr>
                         <td>
                             <ul>
@@ -115,6 +117,20 @@
     <!-- Projects-->
     <section class="projects-section bg-light" id="projects">
         <div class="container px-4 px-lg-5">
+
+
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+            <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="<?= $traitementHydrofuge['photo']; ?>"
+                    alt="<?php echo $traitementHydrofuge['titre']; ?>" /></div>
+            <div class="col-xl-4 col-lg-5">
+                <div class="featured-text text-center text-lg-left">
+                    <h4><?php echo $traitementHydrofuge['titre']; ?></h4>
+                    <p class="text-black-50 mb-0"><?php echo $traitementHydrofuge['description']; ?></p>
+                </div>
+            </div>
+        </div>
+
+
             <!-- Featured Project Row-->
             <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
                 <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/hydro.jpeg"
